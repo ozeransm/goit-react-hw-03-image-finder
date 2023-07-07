@@ -2,7 +2,7 @@
   "name": "react-app",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://ozeransm.github.io/react-app/",
+  "homepage": "https://ozeransm.github.io/goit-react-hw-03-image-finder/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
