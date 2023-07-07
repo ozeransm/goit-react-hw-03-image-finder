@@ -1,25 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import { Component } from "react";
+import { getImage } from "./components/Loader";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit l;kdfgksdljfgklsdfjgkl;jdf  fdjkgkl;jd kl <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+class App extends Component {
+  state={
+    objImg:[],
+    
+  }
+  componentDidMount(){
+    try{
+      getImage('forest')
+      .then(({data})=>{
+        const objImg = data.hits.map((el)=>{
+          return {id: el.id, webformatURL: el.webformatURL, largeImageURL: el.largeImageURL}
+        })
+        this.setState((prev)=>{
+          return {objImg:[...prev.objImg,...objImg]};
+        })
+      });
+    }catch(error){
+      console.log(error);
+    }
+    
+  }
+  render() {
+    return(
+      <>
+      jhgjhghjbgkbgjbh
+      </>
+    )
+  }
 }
-
-export default App;
+export  {App}
