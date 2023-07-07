@@ -1,19 +1,18 @@
 import { Component } from "react";
-import { getImage } from "./components/Loader";
-
-
+import { getImage } from "./components/Api";
+import { ImageGallery } from "./components/ImageGallery";
+import css from './Styles.module.css';
 class App extends Component {
   state={
-    objImg:[],
-    
+    objImg: [],
+    isLoading: false,
+    error: null,
   }
   componentDidMount(){
     try{
-      getImage('forest')
+      getImage('car', 1)
       .then(({data})=>{
-        const objImg = data.hits.map((el)=>{
-          return {id: el.id, webformatURL: el.webformatURL, largeImageURL: el.largeImageURL}
-        })
+        const objImg = data.hits.map((el)=>({id: el.id, webformatURL: el.webformatURL, largeImageURL: el.largeImageURL}))
         this.setState((prev)=>{
           return {objImg:[...prev.objImg,...objImg]};
         })
@@ -25,9 +24,9 @@ class App extends Component {
   }
   render() {
     return(
-      <>
-      jhgjhghjbgkbgjbh
-      </>
+      <div className={css.App}>
+        <ImageGallery listImg={this.state.objImg}/>
+      </div>
     )
   }
 }

@@ -25,11 +25,17 @@ img {
   max-width: 100%;
   height: auto;
 }
-
+ul{
+  list-style: none;
+}
 /*
  * Стили компонента App
  */
 .App {
+  
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
   display: grid;
   grid-template-columns: 1fr;
   grid-gap: 16px;
@@ -123,8 +129,8 @@ img {
  */
 .ImageGallery {
   display: grid;
-  max-width: calc(100vw - 48px);
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  max-width: calc(100vw - 700px);
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   grid-gap: 16px;
   margin-top: 0;
   margin-bottom: 0;
