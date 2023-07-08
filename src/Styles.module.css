@@ -82,7 +82,8 @@ ul{
   width: 48px;
   height: 48px;
   border: 0;
-  background-image: url('https://image.flaticon.com/icons/svg/149/149852.svg');
+  /* background-image: url('https://image.flaticon.com/icons/svg/149/149852.svg'); */
+  background-image: url('./image/magnifying-glass-search.svg');
   background-size: 40%;
   background-repeat: no-repeat;
   background-position: center;
@@ -210,9 +211,4 @@ ul{
 .Button:hover,
 .Button:focus {
   background-color: #303f9f;
-}
-.spinner{
-  position: absolute;
-  top: 150px;
-  left: 150px;
 }
