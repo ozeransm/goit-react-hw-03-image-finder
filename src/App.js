@@ -57,6 +57,8 @@ class App extends Component {
   }
 
   LoadMore=(e)=>{
+    e.preventDefault();
+    e.target.setAttribute('disabled','');
     this.setState((prev)=>{return {page: prev.page+1}});
     this.setState({isLoading: true});
     setTimeout(()=>{
@@ -69,6 +71,8 @@ class App extends Component {
     }catch(error){
       console.log(error);
       this.setState({error});
+    }finally{
+      e.target.removeAttribute('disabled','');
     }
   },1000);
   }
