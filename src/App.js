@@ -18,7 +18,7 @@ class App extends Component {
     isModalOpen: 0,
     isQuery: '',
     error: null,
-    page: 2,
+    page: 1,
     totalPage: 0
   }
   
@@ -31,7 +31,7 @@ class App extends Component {
       getImage(this.state.isQuery, 1)
       .then(({data})=>{
         const objImg = data.hits.map((el)=>({id: nanoid(), webformatURL: el.webformatURL, largeImageURL: el.largeImageURL}));
-        this.setState({objImg, totalPage: data.totalHits, isLoading: false});
+        this.setState({objImg, totalPage: data.totalHits, isLoading: false, page: 1});
       });
     }catch(error){
       console.log(error);
