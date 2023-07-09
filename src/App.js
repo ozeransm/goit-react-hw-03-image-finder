@@ -50,10 +50,9 @@ class App extends Component {
       this.setState({isModalOpen: 0})
     }
   }
-  handleSubmit=(e)=>{
-    e.preventDefault();
-    this.setState({isQuery: e.target.elements.searchQuery.value.trim()})
-    e.target.reset();
+  handleSubmit=(query)=>{
+    this.setState({isQuery: query})
+    
   }
 
   LoadMore=(e)=>{
