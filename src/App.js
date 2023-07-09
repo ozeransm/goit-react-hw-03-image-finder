@@ -51,7 +51,7 @@ class App extends Component {
     }
   }
   handleSubmit=(query)=>{
-    this.setState({isQuery: query})
+    this.setState({isQuery: query.trim()})
     
   }
 

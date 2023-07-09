@@ -6,10 +6,9 @@ import css from '../Styles.module.css';
     }
     onSubmit=(e)=>{
         e.preventDefault();
-        this.setState({isQuery: e.target.elements.searchQuery.value.trim()})
-        e.target.reset();
-      
-        
+        // this.setState({isQuery: e.target.elements.searchQuery.value.trim()})
+        // e.target.reset();
+              
     }
     onChange=(e)=>{
        this.setState({isQuery: e.target.value})
