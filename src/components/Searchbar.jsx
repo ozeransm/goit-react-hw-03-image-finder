@@ -6,15 +6,16 @@ import css from '../Styles.module.css';
     }
     onSubmit=(e)=>{
         e.preventDefault();
-        // this.setState({isQuery: e.target.elements.searchQuery.value.trim()})
-        // e.target.reset();
-              
+                      
     }
     onChange=(e)=>{
        this.setState({isQuery: e.target.value})
         
     }
-
+    onFocus=()=>{
+        this.setState({isQuery: ''});
+    }
+    
     render(){
         return(
         
@@ -30,6 +31,7 @@ import css from '../Styles.module.css';
                 name="searchQuery"
                 value={this.state.isQuery}
                 onChange={this.onChange}
+                onFocus={this.onFocus}
                 placeholder="Search images and photos"
                 />
             </form>
