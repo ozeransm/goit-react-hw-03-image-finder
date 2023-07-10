@@ -81,7 +81,7 @@ class App extends Component {
         {this.state.isLoading && createPortal(<Loader/>, spinner)}
         {this.state.isModalOpen!==0  && createPortal(<Modal listImg={this.state.objImg} id={this.state.isModalOpen} handlerClose={this.handlerClose}/>, modal)}
         <div className={css.App}>
-          <Searchbar listImg={this.state.objImg} handlerOpenImg={this.handlerOpenImg} handleSubmit={this.handleSubmit}/>
+          <Searchbar handleSubmit={this.handleSubmit}/>
           <ImageGallery listImg={this.state.objImg} handlerOpenImg={this.handlerOpenImg}/>
           {this.state.objImg.length!==0 && (this.state.page * 12 <= this.state.totalPage) && <LoadMore LoadMore={this.LoadMore}/>}
         </div>

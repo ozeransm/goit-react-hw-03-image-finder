@@ -6,7 +6,7 @@ import css from '../Styles.module.css';
     }
     onSubmit=(e)=>{
         e.preventDefault();
-        return this.props.handleSubmit(this.state.isQuery)            
+        this.props.handleSubmit(this.state.isQuery)            
     }
     onChange=(e)=>{
         this.setState({isQuery: e.target.value});
