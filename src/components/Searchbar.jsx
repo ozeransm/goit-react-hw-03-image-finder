@@ -6,11 +6,10 @@ import css from '../Styles.module.css';
     }
     onSubmit=(e)=>{
         e.preventDefault();
-                      
+        return this.props.handleSubmit(this.state.isQuery)            
     }
     onChange=(e)=>{
-       this.setState({isQuery: e.target.value})
-        
+        this.setState({isQuery: e.target.value});
     }
     onFocus=()=>{
         this.setState({isQuery: ''});
@@ -21,7 +20,7 @@ import css from '../Styles.module.css';
         
             <header className={css.Searchbar}>
             <form className={css.SearchForm} onSubmit={this.onSubmit}>
-                <button type="submit" className={css["SearchForm-button"]} onClick={()=>this.props.handleSubmit(this.state.isQuery)}>
+                <button type="submit" className={css["SearchForm-button"]} >
                 <span className={css["SearchForm-button-label"]}>Search</span>
                 </button>
     
